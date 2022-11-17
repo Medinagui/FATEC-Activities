@@ -83,6 +83,48 @@ void imprimeMenu()
 
 int main(int argc, char const *argv[])
 {
+
+    int opcao;
+    float valor;
+    
+    Pilha pilha1 = 10;
+
+    while (true)
+    
+    {
+        
+        system("cls");
+        imprimeMenu();
+        cin >> opcao;
+
+        while (opcao < 0 || opcao > 4)
+        {
+            system("cls");
+            cout << "Opcao invalida, insira um numero entre 0 e 4\n\n";
+            imprimeMenu();
+            cin >> opcao;
+        }
+        
+
+        switch (opcao)
+        {
+        case 0:
+            return 0;
+            break;
+        case 1:
+
+            break;            
+        case 2:
+            break;
+        case 3:
+            break;                    
+        case 4:
+            break;        
+        default:
+            break;
+        }
+    }
+    
     system("pause");
     return 0;
 }

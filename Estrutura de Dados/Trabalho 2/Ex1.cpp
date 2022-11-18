@@ -112,19 +112,29 @@ int main(int argc, char const *argv[])
             return 0;
             break;
         case 1:
-
+            system("cls");
+            cout << "INSERINDO ITEM\n\nIndique o valor deseja inserir na pilha: ";
+            cin >> valor;
+            pilha1.push(valor);
+            cout << "Item inserido!\n\n";
+            system("pause");
             break;            
         case 2:
+            system("cls");
+            cout << "REMOVENDO ITEM\n\nO valor do topo foi removido da pilha.\n\n";
+            pilha1.pop();   
+            system("pause");     
             break;
         case 3:
+            system("cls");
+            cout << "IMPRIMINDO TAMANHO\n\nA pilha possui " << pilha1.size() << " itens.\n\n";
+            system("pause");
             break;                    
         case 4:
-            break;        
-        default:
+            system("cls");
+            cout << "IMPRIMINDO ITEM TOPO\n\nO item no topo da pilha é " << pilha1.top() << "\n\n"; 
+            system("pause");      
             break;
         }
     }
-    
-    system("pause");
-    return 0;
 }

@@ -2,6 +2,8 @@
 empilhe-os  conforme  forem  pares  ou impares na pilha1 e pilha2, respectivamente. 
 No final desempilhe os valores de cada pilha.*/
 
+/*CÓDIGO CRIADO POR GUILHERME MEDINA PARA A AULA DE ESTRUTURA DE DADOS DA FATEC TAUBATÉ*/
+
 #include <iostream>
 #include <windows.h>
 

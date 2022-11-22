@@ -8,6 +8,9 @@ o tamanho máximo ajustado ao vetor.
 
 Caso 2 e 4: Remover e Imprimir Item: Verificação antes da chamada da função se a pilha está vazia. */
 
+
+/*CÓDIGO CRIADO POR GUILHERME MEDINA PARA A AULA DE ESTRUTURA DE DADOS DA FATEC TAUBATÉ*/
+
 #include <iostream>
 #include <windows.h>
 

@@ -3,6 +3,8 @@ até  que  o  mesmo pressione a tecla ENTER, e os atribua a uma fila conforme fo
 letras maiúsculas e minúsculas, fila 1 e fila 2, respectivamente. 
 No final retire o conteúdo de cada fila mostrando-os na tela.*/
 
+/*CÓDIGO CRIADO POR GUILHERME MEDINA PARA A AULA DE ESTRUTURA DE DADOS DA FATEC TAUBATÉ*/
+
 #include <iostream>
 #include <windows.h>
 #include <string.h>

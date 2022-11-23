@@ -1,4 +1,4 @@
-/*5- Desenvolva um programa em C que adiciona 20 itens Node programa “Lista Duplamente Encadeada 
+/*5- Desenvolva um programa em C++ que adiciona 20 itens Node programa “Lista Duplamente Encadeada 
 com  Funções”  desenvolvido  em  sala  de  aula.  Use  valores  inteiros  iniciados  com  1  em  ordem 
 crescente. Adicione nesse programa uma chamada para uma função que seja responsável por realizar 
 a busca binária de itens nessa lista. Implemente essa função. */

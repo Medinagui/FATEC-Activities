@@ -1,4 +1,4 @@
-/*Desenvolva um programa em C que leia do usuário 10 caracteres de uma lista simplesmente
+/*Desenvolva um programa em C++ que leia do usuário 10 caracteres de uma lista simplesmente
 encadeada e os imprima na tela juntamente com:
 a) O endereço de cada elemento da lista e
 b) O endereço do ponteiro de próximo.
@@ -8,13 +8,14 @@ Responda: Como você interpretou o resultado impresso na tela.*/
 
 #include <iostream>
 #include <windows.h>
-
+#include <string.h>
 using namespace std;
 
 struct Node
 {
-    double item;
+    string item;
     Node *prox;
+    string *endereco = &item;
 };
 
 class ListaSE
@@ -34,22 +35,23 @@ class ListaSE
             return (primeiro == NULL);
         }
 
-        double item_frente()
+        string item_frente()
         {
             return primeiro->item;
         }
 
-        void adiciona(double valor)
+        void adiciona(string valor)
         {
             Node *lista = new Node();
             lista->item = valor;
             lista->prox = NULL;
+            lista->endereco = lista->endereco;
             if(vazio()) primeiro = lista;
             else ultimo->prox = lista;
             ultimo = lista;
         }
 
-        void insere(int pos, double valor)
+        void insere(int pos, string valor)
         {
             if (pos < 0) return;
 
@@ -75,7 +77,7 @@ class ListaSE
         }
 
 
-        bool pesquisa(double chave)
+        bool pesquisa(string chave)
         {
             Node *atual = primeiro;
             while (atual != NULL)
@@ -94,13 +96,15 @@ class ListaSE
             Node *atual = primeiro;
             while(atual != NULL)
             {
-                cout << " " << atual->item;
+                cout << "\n\nITEM: " << atual->item;
+                cout << "\nPOSICAO NA MEMORIA: " << atual->endereco;
+                cout << "\nPROXIMO: " << atual->prox;
                 atual = atual->prox;
             }
             cout << endl;
         }
 
-        void apaga(double valor)
+        void apaga(string valor)
         {
             Node *atual, *anterior;
             atual = anterior = primeiro;
@@ -126,27 +130,22 @@ class ListaSE
         }
 };
 
-int main(int argc, char const *argv[])
+int main(int argc, string const *argv[])
 {
-    ListaSE l;
-    cout << ">>> Adicionando 2.4, 1.3, -7 no fim\n";
-    l.adiciona(2.4); l.adiciona(1.3); l.adiciona(-7); 
-    cout << " Imprimindo Lista: "; 
-    l.imprime();
-    cout << ">>> Inserindo -5.5 na posicao 1\n";
-    l.insere(1,-5.5);
-    cout << " Imprimindo Lista: "; 
-    l.imprime();cout << ">>> Inserindo 32 na posicao 3\n";
-    l.insere(3,32);cout << " Imprimindo Lista: "; 
-    l.imprime();
-    cout << ">>> Removendo 1.3\n";
-    l.apaga(1.3);
-    cout << ">>> Removendo todos itens do inicio ao fim:\n";
-    while (!l.vazio()) 
-    { 
-        cout << " Removido {"<< l.item_frente() << "}\n";
-        l.apaga(l.item_frente());
+    ListaSE lista;
+    string valor;
+
+    system("cls");
+
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "\n>>> Adicione um caractere a lista: ";
+        cin >> valor;
+        lista.adiciona(valor);
     }
+    
+    lista.imprime();
+
     return 0;
 }
 

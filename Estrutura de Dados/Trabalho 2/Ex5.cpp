@@ -30,17 +30,17 @@ class ListaDE
             return(primeiro==NULL); 
         }
         
-        double item_frente() 
+        int item_frente() 
         { 
             return primeiro->item;   
         }
 
-        double item_fim()    
+        int item_fim()    
         { 
             return ultimo->item;  
         } 
 
-        void adiciona(double valor)
+        void adiciona(int valor)
         {
             Node *novo = new Node();
             novo->item= valor;
@@ -58,7 +58,7 @@ class ListaDE
             ultimo= novo;
         }
 
-        void insere(int pos, double valor)
+        void insere(int pos, int valor)
         {
             if(pos< 0) return; 
             Node* novo = new Node();
@@ -86,7 +86,7 @@ class ListaDE
             else proximo->ant = novo;
         } 
 
-        bool pesquisa(double chave) 
+        bool pesquisa(int chave) 
         {
             Node *atual = primeiro;
             while (atual!= NULL) 
@@ -119,7 +119,7 @@ class ListaDE
             cout << endl;
         }
         
-        void apaga(double valor)
+        void apaga(int valor)
         {  
             Node *atual, *anterior, *proximo;
             anterior = NULL;
@@ -154,6 +154,38 @@ class ListaDE
 
 int main(int argc, char const *argv[])
 {
-    
-    return 0;
+    ListaDE lista;
+    int chave;
+
+    for (int i = 1; i < 21; i++)
+    {
+        lista.adiciona(i);
+    }
+
+    while (true)
+    {
+        system("cls");
+        cout << "BUSCA BINARIA NA LISTA DUPLAMENTE ENCADEADA\n\n";
+
+        cout << "Itens de 1 a 20 foram adicionados a lista. Digite a chave para verificar [Digite 0 para sair]: ";
+        cin >> chave;
+
+        if (chave == 0)
+        {
+            return 0; 
+        }
+        else
+        {
+            if (lista.pesquisa(chave))
+            {
+                cout << chave <<" foi encontrado na lista!";
+            }
+            else
+            {
+                cout << chave << " NAO foi encontrado na lista.";
+            }
+        }
+
+        system("pause");
+    }
 }
